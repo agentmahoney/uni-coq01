@@ -381,7 +381,7 @@ function(exports, dojo, domStyle, app, scenegraph, createScene, animation, raste
 
 		// Loop over polygons in model.
 		for(var p = 0; p < polygons.length; p++) {
-			polycount++;
+			
 			// Prepare the data of polygon p to pass to scanline.
 			var polygon = polygons[p];
 			var normal = polygonNormals[p];
@@ -389,7 +389,11 @@ function(exports, dojo, domStyle, app, scenegraph, createScene, animation, raste
 			if(texture != null) {
 				var polygonTextureCoord = modelData.polygonTextureCoord[p];
 			}
-
+			
+			
+			polycount++;
+			
+			
 			// To fill the polygon, we want at least a triangle to proceed.
 			if(fill && polygon.length < 3) {
 				continue;
